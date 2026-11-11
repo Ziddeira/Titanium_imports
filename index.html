@@ -3,288 +3,228 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Titanium Import's — Moda Masculina Importada</title>
-  <meta name="description" content="Titanium Import's: moda masculina importada com estilo e atitude. Camisetas, polos, camisas, moletons, jeans, bermudas, bonés e tênis.">
-  <meta name="theme-color" content="#0a0a0a">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23000'/%3E%3Cpath d='M14 44 L12 22 L23 32 L32 14 L41 32 L52 22 L50 44 Z' fill='%23e3b54a'/%3E%3C/svg%3E">
+  <title>Titanium Import's — Moda masculina importada</title>
+  <meta name="description" content="Titanium Import's: moda masculina importada dos Estados Unidos. Casacos, moletons, camisetas, polos, camisas, jeans, bonés e tênis com envio para todo o Brasil.">
+  <meta name="theme-color" content="#f3f1ec">
+  <link rel="icon" type="image/png" href="assets/img/logo-160.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/frames/desktop/f001.webp" media="(min-aspect-ratio: 1/1)">
+  <link rel="preload" as="image" href="assets/frames/mobile/f001.webp" media="(max-aspect-ratio: 1/1)">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-  <!-- Gradientes compartilhados pelas ilustrações das peças -->
-  <svg class="svg-defs" aria-hidden="true" focusable="false">
-    <defs>
-      <linearGradient id="shade" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#fff" stop-opacity=".22"/>
-        <stop offset=".45" stop-color="#fff" stop-opacity="0"/>
-        <stop offset="1" stop-color="#000" stop-opacity=".35"/>
-      </linearGradient>
-      <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#fff2c0"/>
-        <stop offset=".35" stop-color="#e9c060"/>
-        <stop offset=".65" stop-color="#b07a22"/>
-        <stop offset="1" stop-color="#f0cc6a"/>
-      </linearGradient>
-    </defs>
-  </svg>
+<body class="is-intro">
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- Barra de avisos -->
-  <div class="topbar">
-    <div class="topbar__track">
-      <span>★ Peças importadas</span>
-      <span>★ Envio para todo o Brasil</span>
-      <span>★ Pague no Pix ou parcele no cartão</span>
-      <span>★ Atendimento pelo WhatsApp</span>
-      <span aria-hidden="true">★ Peças importadas</span>
-      <span aria-hidden="true">★ Envio para todo o Brasil</span>
-      <span aria-hidden="true">★ Pague no Pix ou parcele no cartão</span>
-      <span aria-hidden="true">★ Atendimento pelo WhatsApp</span>
-    </div>
-  </div>
-
-  <!-- Cabeçalho -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="#inicio" class="brand" aria-label="Titanium Import's — início">
-        <canvas class="brand__logo" id="logoSmall" aria-hidden="true"></canvas>
-        <span class="brand__name">Titanium <em>Import’s</em></span>
-      </a>
-
-      <nav class="nav" id="nav" aria-label="Principal">
-        <a href="#inicio">Início</a>
-        <a href="#colecoes">Coleções</a>
-        <a href="#produtos">Produtos</a>
+  <!-- ===================== Cabeçalho ===================== -->
+  <header class="hdr" id="hdr">
+    <div class="hdr__inner">
+      <nav class="hdr__nav" aria-label="Principal">
+        <a href="#novidades">Novidades</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#inverno">Inverno 26</a>
         <a href="#sobre">Sobre</a>
-        <a href="#como-comprar">Como comprar</a>
-        <a href="#contato">Contato</a>
       </nav>
 
-      <div class="header__actions">
-        <button class="icon-btn" id="cartOpen" aria-label="Abrir sacola">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-          <span class="badge" id="cartCount">0</span>
+      <a href="#topo" class="hdr__brand" aria-label="Titanium Import's — voltar ao início">
+        <img src="assets/img/logo-160.png" width="40" height="40" alt="">
+        <span>Titanium Import’s</span>
+      </a>
+
+      <div class="hdr__actions">
+        <a href="#" class="hdr__link js-wa" data-msg="Olá! Vim pelo site da Titanium Import's.">Atendimento</a>
+        <button class="hdr__bag" id="bagOpen" aria-label="Abrir sacola">
+          Sacola <span id="bagCount">0</span>
         </button>
-        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
-          <span></span><span></span><span></span>
+        <button class="hdr__menu" id="menuOpen" aria-label="Abrir menu" aria-expanded="false" aria-controls="mnav">
+          <span></span><span></span>
         </button>
       </div>
     </div>
+    <nav class="mnav" id="mnav" aria-label="Menu">
+      <a href="#novidades">Novidades</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#inverno">Inverno 26</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#" class="js-wa" data-msg="Olá! Vim pelo site da Titanium Import's.">Atendimento</a>
+    </nav>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="inicio">
-      <div class="hero__bg" aria-hidden="true">
-        <div class="hero__stripes"></div>
-        <div class="hero__glow"></div>
-      </div>
-      <div class="container hero__inner">
-        <div class="hero__text reveal">
-          <p class="eyebrow">Moda masculina importada</p>
-          <h1>Estilo importado.<br><span class="gold-text">Atitude de rei.</span></h1>
-          <p class="lead">Peças selecionadas direto dos Estados Unidos para o homem que não passa despercebido. Qualidade, caimento e presença em cada detalhe.</p>
-          <div class="hero__cta">
-            <a href="#produtos" class="btn btn--gold">Ver coleção</a>
-            <a href="#" class="btn btn--ghost js-whatsapp" data-msg="Olá! Vim pelo site e quero conhecer as novidades da Titanium Import's.">Falar no WhatsApp</a>
-          </div>
-          <ul class="hero__perks">
-            <li><strong>100%</strong><span>Importado</span></li>
-            <li><strong>P ao GG</strong><span>Grade completa</span></li>
-            <li><strong>Brasil</strong><span>Enviamos para todo o país</span></li>
-          </ul>
-        </div>
-        <div class="hero__logo reveal">
-          <div class="ring" aria-hidden="true"></div>
-          <canvas id="logoHero" role="img" aria-label="Logo Titanium Import's"></canvas>
-        </div>
-      </div>
-      <a href="#colecoes" class="scroll-hint" aria-label="Rolar para coleções"><span></span></a>
-    </section>
+  <!-- ===================== Intro com scroll ===================== -->
+  <section class="intro" id="topo" aria-label="Abertura — Coleção Inverno 26">
+    <div class="intro__stage">
+      <canvas class="intro__canvas" id="introCanvas" aria-hidden="true"></canvas>
+      <div class="intro__shade" aria-hidden="true"></div>
 
-    <!-- COLEÇÕES -->
-    <section class="section" id="colecoes">
-      <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Coleções</p>
-          <h2>Vista-se como <span class="gold-text">realeza</span></h2>
-          <div class="ornament" aria-hidden="true"><span></span>✦<span></span></div>
-        </header>
-        <div class="categories" id="categories"></div>
+      <div class="intro__copy intro__copy--a" data-from="0" data-to="0.2">
+        <p class="kicker">Coleção Inverno 26</p>
+        <h1 class="display">Feito para<br>descer.</h1>
       </div>
-    </section>
 
-    <!-- BANNER -->
-    <section class="banner">
-      <div class="container banner__inner reveal">
-        <div>
-          <p class="eyebrow">Drop exclusivo</p>
-          <h2>Liberty <span class="gold-text">Collection</span></h2>
-          <p>Inspirada no espírito americano: cortes modernos, tecidos premium e acabamento de alto padrão. Quantidades limitadas.</p>
-          <a href="#produtos" class="btn btn--gold">Garantir a minha</a>
-        </div>
-        <div class="banner__art" aria-hidden="true">
-          <div class="banner__item b1" data-garment="tshirt" style="--c:#121212"></div>
-          <div class="banner__item b2" data-garment="polo" style="--c:#1d2a5a"></div>
-          <div class="banner__item b3" data-garment="cap" style="--c:#8f1d24"></div>
+      <div class="intro__copy intro__copy--b" data-from="0.28" data-to="0.56">
+        <p class="display display--sm">Peças importadas para o frio de verdade.</p>
+        <p class="intro__sub">Casacos técnicos, moletons pesados e básicos que aguentam o ritmo.</p>
+      </div>
+
+      <div class="intro__copy intro__copy--c" data-from="0.64" data-to="0.84">
+        <p class="display">Sem freio.</p>
+      </div>
+
+      <div class="intro__hint" id="introHint">
+        <span>Role para descer</span>
+        <i aria-hidden="true"></i>
+      </div>
+
+      <div class="intro__meta" aria-hidden="true">
+        <span id="introLoad">Carregando 0%</span>
+        <span class="intro__bar"><i id="introBar"></i></span>
+        <span id="introTime">00:00</span>
+      </div>
+
+      <div class="intro__veil" id="introVeil" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <main id="conteudo">
+    <!-- Abertura do site -->
+    <section class="lead container" id="sobre">
+      <p class="kicker kicker--dark">Titanium Import’s</p>
+      <div class="lead__grid">
+        <h2 class="h-xl">Moda masculina importada, escolhida peça por peça.</h2>
+        <div class="lead__text">
+          <p>Trazemos dos Estados Unidos o que realmente vale a pena vestir: tecidos encorpados, modelagem certa e acabamento que dura. Sem excesso, sem modismo.</p>
+          <p>Compre pelo site, finalize com a nossa equipe no WhatsApp e receba em qualquer lugar do Brasil.</p>
+          <a href="#novidades" class="link-arrow">Ver novidades</a>
         </div>
       </div>
     </section>
 
-    <!-- PRODUTOS -->
-    <section class="section" id="produtos">
-      <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Vitrine</p>
-          <h2>Destaques da <span class="gold-text">semana</span></h2>
-          <div class="ornament" aria-hidden="true"><span></span>✦<span></span></div>
-        </header>
-        <div class="filters reveal" id="filters" role="tablist" aria-label="Filtrar por categoria"></div>
-        <div class="products" id="products"></div>
+    <!-- Categorias -->
+    <section class="cats container" id="categorias" aria-label="Categorias">
+      <div class="sec-head">
+        <h2 class="h-md">Categorias</h2>
+        <a href="#novidades" class="link-arrow">Ver tudo</a>
       </div>
+      <div class="cats__grid" id="cats"></div>
     </section>
 
-    <!-- SOBRE -->
-    <section class="section about" id="sobre">
-      <div class="container about__inner">
-        <div class="about__visual reveal">
-          <div class="about__frame">
-            <canvas id="logoAbout" aria-hidden="true"></canvas>
-          </div>
-        </div>
-        <div class="about__text reveal">
-          <p class="eyebrow">Nossa história</p>
-          <h2>Mais que roupa. <span class="gold-text">Presença.</span></h2>
-          <p>A Titanium Import’s nasceu para trazer ao homem brasileiro o melhor da moda masculina americana. Cada peça é escolhida a dedo, pensando em qualidade, conforto e no visual que impõe respeito.</p>
-          <p>Do básico bem feito ao look de impacto, você encontra aqui roupas que acompanham a sua rotina e elevam o seu estilo.</p>
-          <ul class="features">
-            <li>
-              <span class="features__icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9.2l-5.2 4.8L18.2 21 12 17.5 5.8 21l1.4-7L2 9.2l7.1-.9z"/></svg></span>
-              <div><strong>Curadoria premium</strong><p>Peças selecionadas pela qualidade e caimento.</p></div>
-            </li>
-            <li>
-              <span class="features__icon"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span>
-              <div><strong>Envio para todo o Brasil</strong><p>Pedido embalado com cuidado e código de rastreio.</p></div>
-            </li>
-            <li>
-              <span class="features__icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H7l-3 3z"/></svg></span>
-              <div><strong>Atendimento próximo</strong><p>Tire dúvidas de tamanho e modelo direto no WhatsApp.</p></div>
-            </li>
-          </ul>
+    <!-- Produtos -->
+    <section class="shop container" id="novidades" aria-label="Novidades">
+      <div class="sec-head">
+        <h2 class="h-md">Novidades</h2>
+        <p class="sec-head__count" id="shopCount"></p>
+      </div>
+      <div class="tabs" id="tabs" role="tablist" aria-label="Filtrar por categoria"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- Editorial -->
+    <section class="edit" id="inverno" aria-label="Inverno 26">
+      <div class="edit__media">
+        <img src="assets/img/editorial-wide.webp" alt="Snowboarder de preto fazendo uma curva na neve" loading="lazy" width="1280" height="720">
+      </div>
+      <div class="edit__panel container">
+        <div class="edit__card">
+          <p class="kicker kicker--dark">Inverno 26</p>
+          <h2 class="h-lg">Camadas que esquentam sem pesar.</h2>
+          <p>A coleção de inverno combina jaquetas puffer, moletons de algodão pesado e básicos de alta gramatura. Peças pensadas para a montanha e que funcionam na cidade.</p>
+          <a href="#novidades" class="btn">Comprar a coleção</a>
         </div>
       </div>
     </section>
 
-    <!-- COMO COMPRAR -->
-    <section class="section" id="como-comprar">
-      <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Simples e rápido</p>
-          <h2>Como <span class="gold-text">comprar</span></h2>
-          <div class="ornament" aria-hidden="true"><span></span>✦<span></span></div>
-        </header>
-        <ol class="steps">
-          <li class="step reveal">
-            <span class="step__num">01</span>
-            <h3>Escolha suas peças</h3>
-            <p>Navegue pela vitrine, selecione cor e tamanho e adicione à sacola.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step__num">02</span>
-            <h3>Envie pelo WhatsApp</h3>
-            <p>Finalize a sacola e seu pedido chega pronto na nossa conversa.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step__num">03</span>
-            <h3>Pague e receba</h3>
-            <p>Combine o pagamento via Pix ou cartão e receba em casa.</p>
-          </li>
-        </ol>
+    <!-- Serviço -->
+    <section class="service container" aria-label="Como funciona">
+      <div class="service__item">
+        <span class="service__n">01</span>
+        <h3>Envio para todo o Brasil</h3>
+        <p>Postamos com código de rastreio assim que o pagamento é confirmado.</p>
+      </div>
+      <div class="service__item">
+        <span class="service__n">02</span>
+        <h3>Pix ou cartão</h3>
+        <p>Pague à vista no Pix ou parcele no cartão de crédito.</p>
+      </div>
+      <div class="service__item">
+        <span class="service__n">03</span>
+        <h3>Atendimento direto</h3>
+        <p>Dúvida de tamanho ou modelo? Fale com a gente pelo WhatsApp.</p>
+      </div>
+      <div class="service__item">
+        <span class="service__n">04</span>
+        <h3>Peças selecionadas</h3>
+        <p>Cada item passa pela nossa curadoria antes de entrar no estoque.</p>
       </div>
     </section>
 
-    <!-- CTA SOCIAL -->
-    <section class="social-cta">
-      <div class="container social-cta__inner reveal">
-        <h2>Acompanhe os <span class="gold-text">lançamentos</span></h2>
-        <p>Novidades, bastidores e looks completos todos os dias nas nossas redes.</p>
-        <div class="social-cta__links">
-          <a href="#" class="btn btn--ghost js-social" data-network="tiktok">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.4 2.2 1.8 3.7 4 3.9v3.1c-1.5 0-2.9-.4-4-1.1v6.3A6.2 6.2 0 1 1 10.3 9v3.2a3 3 0 1 0 3 3V3h3.2Z"/></svg>
-            TikTok
-          </a>
-          <a href="#" class="btn btn--ghost js-social" data-network="instagram">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-            Instagram
-          </a>
-          <a href="#" class="btn btn--gold js-whatsapp" data-msg="Olá! Quero receber as novidades da Titanium Import's.">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
-            WhatsApp
-          </a>
+    <!-- Split -->
+    <section class="split container" aria-label="Sobre a marca">
+      <figure class="split__img">
+        <img src="assets/img/editorial-tall.webp" alt="Snowboarder vestindo jaqueta preta e óculos espelhados" loading="lazy" width="576" height="720">
+      </figure>
+      <div class="split__text">
+        <p class="kicker kicker--dark">Sobre nós</p>
+        <h2 class="h-lg">Dos Estados Unidos direto para o seu guarda-roupa.</h2>
+        <p>A Titanium Import’s nasceu da vontade de vestir bem sem pagar caro por isso. Selecionamos peças nos Estados Unidos com foco em qualidade e caimento, e cuidamos de tudo até a entrega.</p>
+        <div class="split__cta">
+          <a href="#" class="btn js-wa" data-msg="Olá! Quero saber mais sobre as peças da Titanium Import's.">Falar no WhatsApp</a>
+          <a href="#" class="link-arrow js-social" data-network="instagram">Instagram</a>
+          <a href="#" class="link-arrow js-social" data-network="tiktok">TikTok</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- RODAPÉ -->
-  <footer class="footer" id="contato">
-    <div class="container footer__grid">
-      <div class="footer__brand">
-        <canvas id="logoFooter" aria-hidden="true"></canvas>
-        <p>Moda masculina importada com estilo, qualidade e atitude.</p>
+  <!-- ===================== Rodapé ===================== -->
+  <footer class="ftr">
+    <div class="container ftr__top">
+      <div class="ftr__brand">
+        <img src="assets/img/logo-160.png" width="64" height="64" alt="Titanium Import's" loading="lazy">
+        <p>Moda masculina importada.<br>Enviamos para todo o Brasil.</p>
       </div>
-      <div>
-        <h4>Navegação</h4>
-        <ul>
-          <li><a href="#colecoes">Coleções</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#sobre">Sobre nós</a></li>
-          <li><a href="#como-comprar">Como comprar</a></li>
-        </ul>
+      <div class="ftr__col">
+        <h4>Loja</h4>
+        <a href="#novidades">Novidades</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#inverno">Inverno 26</a>
       </div>
-      <div>
-        <h4>Atendimento</h4>
-        <ul>
-          <li><a href="#" class="js-whatsapp" data-msg="Olá! Preciso de ajuda com um pedido.">WhatsApp</a></li>
-          <li><a href="#" class="js-social" data-network="instagram">Instagram</a></li>
-          <li><a href="#" class="js-social" data-network="tiktok">TikTok</a></li>
-          <li><span id="hours"></span></li>
-        </ul>
+      <div class="ftr__col">
+        <h4>Ajuda</h4>
+        <a href="#" class="js-wa" data-msg="Olá! Preciso de ajuda com um pedido.">WhatsApp</a>
+        <a href="#" class="js-wa" data-msg="Olá! Tenho uma dúvida sobre tamanhos.">Guia de tamanhos</a>
+        <span id="hours"></span>
       </div>
-      <div>
-        <h4>Pagamento</h4>
-        <div class="pay">
-          <span>Pix</span><span>Crédito</span><span>Débito</span>
-        </div>
-        <p class="footer__note">Pedidos finalizados pelo WhatsApp.</p>
+      <div class="ftr__col">
+        <h4>Redes</h4>
+        <a href="#" class="js-social" data-network="instagram">Instagram</a>
+        <a href="#" class="js-social" data-network="tiktok">TikTok</a>
       </div>
     </div>
-    <div class="container footer__bottom">
-      <p>© <span id="year"></span> Titanium Import’s. Todos os direitos reservados.</p>
-      <a href="#inicio" class="to-top">Voltar ao topo ↑</a>
+    <div class="container ftr__bottom">
+      <span>© <span id="year"></span> Titanium Import’s</span>
+      <span>Pix · Cartão de crédito · Débito</span>
     </div>
   </footer>
 
-  <!-- SACOLA -->
-  <div class="overlay" id="overlay" hidden></div>
-  <aside class="cart" id="cart" aria-label="Sacola de compras" aria-hidden="true">
-    <header class="cart__head">
-      <h3>Sua sacola</h3>
-      <button class="icon-btn" id="cartClose" aria-label="Fechar sacola">✕</button>
+  <!-- ===================== Sacola ===================== -->
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="bag" id="bag" aria-label="Sacola" aria-hidden="true">
+    <header class="bag__head">
+      <h3>Sacola <span id="bagHeadCount"></span></h3>
+      <button class="bag__close" id="bagClose" aria-label="Fechar sacola">Fechar</button>
     </header>
-    <div class="cart__items" id="cartItems"></div>
-    <footer class="cart__foot">
-      <div class="cart__total"><span>Subtotal</span><strong id="cartTotal">R$ 0,00</strong></div>
-      <p class="cart__hint" id="cartInstallments"></p>
-      <button class="btn btn--gold btn--block" id="checkout">Finalizar pelo WhatsApp</button>
-      <button class="btn btn--link" id="cartClear">Esvaziar sacola</button>
+    <div class="bag__items" id="bagItems"></div>
+    <footer class="bag__foot">
+      <div class="bag__row"><span>Subtotal</span><strong id="bagTotal">R$ 0,00</strong></div>
+      <p class="bag__note" id="bagNote">Frete calculado no atendimento.</p>
+      <button class="btn btn--block" id="checkout">Finalizar pelo WhatsApp</button>
     </footer>
   </aside>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="logo/titanium-logo.js"></script>
+  <script src="assets/js/intro.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
