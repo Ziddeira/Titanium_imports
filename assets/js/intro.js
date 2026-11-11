@@ -4,7 +4,8 @@
 (function () {
   'use strict';
 
-  var FRAMES = 193;        // quadros exportados do vídeo
+  var VERSION = 'v3';      // pasta dos quadros: troque ao trocar o vídeo
+  var FRAMES = 145;        // quadros exportados do vídeo
   var FPS = 24;            // taxa original do vídeo
   var VIDEO_END = 0.9;     // fração do scroll em que o vídeo termina
   var VEIL_FROM = 0.84;    // início do fade para o site
@@ -35,7 +36,7 @@
   var ticking = false;
 
   function src(i) {
-    return 'assets/frames/' + set + '/f' + String(i + 1).padStart(3, '0') + '.webp';
+    return 'assets/frames/' + VERSION + '/' + set + '/f' + String(i + 1).padStart(3, '0') + '.webp';
   }
 
   /* Ordem de carregamento progressiva: primeiro quadros espaçados,
@@ -147,7 +148,7 @@
     if (bar) bar.style.width = (clamp(p / VIDEO_END, 0, 1) * 100).toFixed(2) + '%';
     if (time) {
       var sec = Math.floor((clamp(p / VIDEO_END, 0, 1) * (FRAMES - 1)) / FPS);
-      time.textContent = '00:0' + sec + ' / 00:08';
+      time.textContent = '00:0' + sec + ' / 00:0' + Math.round(FRAMES / FPS);
     }
     var v = smooth(VEIL_FROM, VEIL_TO, p);
     if (veil) veil.style.opacity = v.toFixed(3);

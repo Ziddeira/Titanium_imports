@@ -14,8 +14,7 @@ assets/css/style.css      Estilos
 assets/js/intro.js        Abertura: vídeo que avança conforme o scroll
 assets/js/music.js        Tela "Aumenta o som" e player da playlist do Spotify
 assets/js/main.js         Catálogo, filtros, sacola e configurações da loja
-assets/frames/desktop/    193 quadros do vídeo (1280x720, WebP)
-assets/frames/mobile/     Mesmos quadros recortados para celular (640x720)
+assets/frames/v3/         Quadros do vídeo da abertura (desktop 1280x720 e mobile 640x720)
 assets/img/               Fotos dos produtos, imagens editoriais e logo
 logo/                     Logo desenhada em Canvas
 ```
@@ -40,11 +39,14 @@ quem está logado ouve as faixas completas.
 
 ## Trocar o vídeo da abertura
 
-Gere os quadros a partir de um MP4 (16:9) com o ffmpeg:
+Cada vídeo fica numa pasta própria (`v3`, `v4`...). Assim o navegador de quem já visitou
+nunca mistura quadros do vídeo antigo com os do novo.
 
 ```bash
-ffmpeg -i video.mp4 -vf "scale=1280:720" -c:v libwebp -quality 66 assets/frames/desktop/f%03d.webp
-ffmpeg -i video.mp4 -vf "crop=640:720:320:0" -c:v libwebp -quality 66 assets/frames/mobile/f%03d.webp
+mkdir -p assets/frames/v4/desktop assets/frames/v4/mobile
+ffmpeg -i video.mp4 -vf "scale=1280:720" -c:v libwebp -quality 66 assets/frames/v4/desktop/f%03d.webp
+ffmpeg -i video.mp4 -vf "crop=640:720:320:0" -c:v libwebp -quality 66 assets/frames/v4/mobile/f%03d.webp
 ```
 
-Se o número de quadros mudar, ajuste `FRAMES` em `assets/js/intro.js`.
+Depois, em `assets/js/intro.js`, mude `VERSION` para `'v4'` e `FRAMES` para o número de quadros.
+No `index.html`, atualize os dois `preload` dos quadros e aumente o `?v=` do CSS e dos scripts.

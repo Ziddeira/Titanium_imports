@@ -11,7 +11,7 @@
 
   var MUSIC = {
     // ID da playlist (parte final do link open.spotify.com/playlist/XXXX)
-    playlist: '6rdpmFqncXiYBJLitNy5LB',
+    playlist: '0g9DQ9UB0Vr1y3KwgAXr1C',
     label: 'Trilha Titanium · Funk'
   };
 
