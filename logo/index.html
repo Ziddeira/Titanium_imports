@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Titanium Import's — Logo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #1b1c1f; --gold: #e3b54a; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      background: radial-gradient(circle at 50% 40%, #33353a 0%, var(--bg) 70%);
+      color: #eee;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      padding: 16px;
+    }
+    #logo {
+      width: min(90vw, 70vh, 600px);
+      aspect-ratio: 1 / 1;
+      display: block;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+    }
+    button {
+      font: 600 16px/1 system-ui, sans-serif;
+      color: #1a1204;
+      background: linear-gradient(#f8db7c, #c99430);
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 28px;
+      cursor: pointer;
+    }
+    button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <canvas id="logo" aria-label="Logo Titanium Import's" role="img"></canvas>
+  <button id="download" type="button">Baixar PNG (2048px)</button>
+
+  <script src="titanium-logo.js"></script>
+  <script>
+    TitaniumLogo.mount(document.getElementById('logo'), { animate: true });
+
+    document.getElementById('download').addEventListener('click', function () {
+      TitaniumLogo.fontsReady().then(function () {
+        var a = document.createElement('a');
+        a.href = TitaniumLogo.toPNG(2048);
+        a.download = 'titanium-imports-logo.png';
+        a.click();
+      });
+    });
+  </script>
+</body>
+</html>
