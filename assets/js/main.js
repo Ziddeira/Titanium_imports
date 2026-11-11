@@ -43,9 +43,9 @@
   ];
 
   var PRODUCTS = [
-    { id: 'p1', cat: 'casacos', name: 'Jaqueta Puffer Alpine', price: 599.9, tag: 'Novo', img: 'assets/img/produto-1.webp', sizes: TOPS,
+    { id: 'p1', cat: 'casacos', name: 'Jaqueta Puffer Black', price: 599.9, tag: 'Novo', img: 'assets/img/produto-1.webp', sizes: TOPS,
       colors: [['Preto', '#161616'], ['Verde-oliva', '#4f5139'], ['Areia', '#cbbfa8']] },
-    { id: 'p2', cat: 'moletons', name: 'Moletom Canguru Heavy', price: 299.9, old: 349.9, img: 'assets/img/produto-2.webp', sizes: TOPS,
+    { id: 'p2', cat: 'moletons', name: 'Moletom Canguru Heavy', price: 299.9, old: 349.9, tag: 'Oferta', img: 'assets/img/produto-2.webp', sizes: TOPS,
       colors: [['Chumbo', '#4a4a4c'], ['Preto', '#161616'], ['Off-white', '#ece7dc']] },
     { id: 'p3', cat: 'camisetas', name: 'Camiseta Heavyweight', price: 139.9, img: 'assets/img/produto-3.webp', sizes: TOPS,
       colors: [['Off-white', '#ece7dc'], ['Preto', '#161616'], ['Cinza mescla', '#9a9a98']] },
@@ -126,7 +126,7 @@
     return '<article class="card" data-id="' + p.id + '" data-color="0" style="animation-delay:' + i * 50 + 'ms">' +
       '<div class="card__media">' +
         '<img src="' + p.img + '" alt="' + esc(p.name) + '" loading="lazy" width="880" height="1100">' +
-        (p.tag ? '<span class="card__tag">' + p.tag + '</span>' : '') +
+        (p.tag ? '<span class="card__tag' + (p.old ? ' card__tag--sale' : '') + '">' + p.tag + '</span>' : '') +
         '<div class="card__quick"><p>Adicionar à sacola</p><div class="sizes">' +
           p.sizes.map(function (s) { return '<button class="size" data-s="' + s + '" aria-label="Adicionar tamanho ' + s + '">' + s + '</button>'; }).join('') +
         '</div></div>' +
@@ -186,7 +186,7 @@
     var b = $('#bagOpen');
     b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump');
     var p = byId[id];
-    toast(p.name + ' · ' + p.colors[color][0] + ' · ' + size + ' adicionado');
+    toast(p.name + ' · ' + p.colors[color][0] + ' · ' + size + ' foi pra sacola');
   }
 
   function total() { return bag.reduce(function (s, i) { return s + byId[i.id].price * i.qty; }, 0); }
@@ -198,7 +198,7 @@
 
     var box = $('#bagItems');
     if (!bag.length) {
-      box.innerHTML = '<div class="bag__empty"><p>Sua sacola está vazia.</p><a href="#novidades" class="link-arrow js-close">Ver novidades</a></div>';
+      box.innerHTML = '<div class="bag__empty"><p>Sua sacola tá vazia.</p><a href="#novidades" class="link-arrow js-close">Ver novidades</a></div>';
     } else {
       box.innerHTML = bag.map(function (i, idx) {
         var p = byId[i.id];
@@ -263,7 +263,7 @@
       var c = p.colors[i.color] || p.colors[0];
       return '- ' + i.qty + 'x ' + p.name + ' (' + c[0] + ', ' + i.size + ') — ' + brl(p.price * i.qty);
     });
-    var msg = 'Olá! Gostaria de fazer este pedido:\n\n' + lines.join('\n') +
+    var msg = 'Salve! Quero fechar este pedido:\n\n' + lines.join('\n') +
       '\n\nSubtotal: ' + brl(total()) + '\n\nMeu CEP para o frete: ';
     window.open(waURL(msg), '_blank', 'noopener');
   }

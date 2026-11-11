@@ -12,6 +12,7 @@ Abra `index.html` no navegador. Para publicar, envie a pasta inteira para qualqu
 index.html                Página
 assets/css/style.css      Estilos
 assets/js/intro.js        Abertura: vídeo que avança conforme o scroll
+assets/js/music.js        Tela "Aumenta o som" e player da playlist do Spotify
 assets/js/main.js         Catálogo, filtros, sacola e configurações da loja
 assets/frames/desktop/    193 quadros do vídeo (1280x720, WebP)
 assets/frames/mobile/     Mesmos quadros recortados para celular (640x720)
@@ -27,6 +28,15 @@ No topo de `assets/js/main.js`:
 - **`PRODUCTS`**: nome, categoria, preço, preço antigo (`old`), selo (`tag`), foto (`img`), tamanhos e cores.
   Cada cor aceita uma foto própria: `['Branco', '#f4f2ee', 'assets/img/camisa-branca.webp']`.
 - **`FEATURED`**: as quatro categorias com foto.
+
+## Música (Spotify)
+
+No topo de `assets/js/music.js`, troque `playlist` pelo ID da sua playlist (a parte final do link
+`open.spotify.com/playlist/XXXX`) e `label` pelo nome que aparece no player.
+
+Nenhum navegador deixa um site tocar som sozinho. Por isso o site abre com a tela "Aumenta o som":
+o clique em "Entrar com som" libera o áudio. Quem não está logado no Spotify ouve trechos de 30 s;
+quem está logado ouve as faixas completas.
 
 ## Trocar o vídeo da abertura
 

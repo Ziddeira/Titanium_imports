@@ -76,7 +76,7 @@
             if (loadLabel) {
               loadLabel.textContent = loaded < FRAMES
                 ? 'Carregando ' + Math.round((loaded / FRAMES) * 100) + '%'
-                : 'Inverno 26';
+                : 'Rua 26';
             }
             if (i === 0 || Math.abs(i - Math.round(current)) < 3) render(true);
             next();

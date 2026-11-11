@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Titanium Import's — Moda masculina importada</title>
-  <meta name="description" content="Titanium Import's: moda masculina importada dos Estados Unidos. Casacos, moletons, camisetas, polos, camisas, jeans, bonés e tênis com envio para todo o Brasil.">
-  <meta name="theme-color" content="#f3f1ec">
+  <title>Titanium Import's — Streetwear importado</title>
+  <meta name="description" content="Titanium Import's: streetwear masculino importado dos Estados Unidos. Moletons, jaquetas, camisetas, bonés e tênis com envio para todo o Brasil.">
+  <meta name="theme-color" content="#0c0c0c">
   <link rel="icon" type="image/png" href="assets/img/logo-160.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/frames/desktop/f001.webp" media="(min-aspect-ratio: 1/1)">
   <link rel="preload" as="image" href="assets/frames/mobile/f001.webp" media="(max-aspect-ratio: 1/1)">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -17,13 +17,27 @@
 <body class="is-intro">
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
+  <!-- ===================== Entrada (ativa o som) ===================== -->
+  <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+    <div class="gate__inner">
+      <img src="assets/img/logo-160.png" width="96" height="96" alt="">
+      <p class="kicker">Titanium Import’s · Coleção Rua 26</p>
+      <h2 class="gate__title" id="gateTitle">Aumenta o som.</h2>
+      <p class="gate__text">Esse site tem trilha de funk tocando pelo Spotify. Você pode pausar quando quiser.</p>
+      <div class="gate__actions">
+        <button class="btn btn--accent" id="gateSound">Entrar com som</button>
+        <button class="btn btn--ghost" id="gateMute">Entrar sem som</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ===================== Cabeçalho ===================== -->
   <header class="hdr" id="hdr">
     <div class="hdr__inner">
       <nav class="hdr__nav" aria-label="Principal">
         <a href="#novidades">Novidades</a>
         <a href="#categorias">Categorias</a>
-        <a href="#inverno">Inverno 26</a>
+        <a href="#rua">Rua 26</a>
         <a href="#sobre">Sobre</a>
       </nav>
 
@@ -33,7 +47,7 @@
       </a>
 
       <div class="hdr__actions">
-        <a href="#" class="hdr__link js-wa" data-msg="Olá! Vim pelo site da Titanium Import's.">Atendimento</a>
+        <a href="#" class="hdr__link js-wa" data-msg="Salve! Vim pelo site da Titanium Import's.">Atendimento</a>
         <button class="hdr__bag" id="bagOpen" aria-label="Abrir sacola">
           Sacola <span id="bagCount">0</span>
         </button>
@@ -45,34 +59,34 @@
     <nav class="mnav" id="mnav" aria-label="Menu">
       <a href="#novidades">Novidades</a>
       <a href="#categorias">Categorias</a>
-      <a href="#inverno">Inverno 26</a>
+      <a href="#rua">Rua 26</a>
       <a href="#sobre">Sobre</a>
-      <a href="#" class="js-wa" data-msg="Olá! Vim pelo site da Titanium Import's.">Atendimento</a>
+      <a href="#" class="js-wa" data-msg="Salve! Vim pelo site da Titanium Import's.">Atendimento</a>
     </nav>
   </header>
 
   <!-- ===================== Intro com scroll ===================== -->
-  <section class="intro" id="topo" aria-label="Abertura — Coleção Inverno 26">
+  <section class="intro" id="topo" aria-label="Abertura — Coleção Rua 26">
     <div class="intro__stage">
       <canvas class="intro__canvas" id="introCanvas" aria-hidden="true"></canvas>
       <div class="intro__shade" aria-hidden="true"></div>
 
       <div class="intro__copy intro__copy--a" data-from="0" data-to="0.2">
-        <p class="kicker">Coleção Inverno 26</p>
-        <h1 class="display">Feito para<br>descer.</h1>
+        <p class="kicker">Coleção Rua 26</p>
+        <h1 class="display">Chegou<br>no grau.</h1>
       </div>
 
       <div class="intro__copy intro__copy--b" data-from="0.28" data-to="0.56">
-        <p class="display display--sm">Peças importadas para o frio de verdade.</p>
-        <p class="intro__sub">Casacos técnicos, moletons pesados e básicos que aguentam o ritmo.</p>
+        <p class="display display--sm">Importado dos EUA.<br><span class="hl">Estilo de quebrada.</span></p>
+        <p class="intro__sub">Do baile pra rua: moletom pesado, jaqueta, boné e tênis que seguram o rolê.</p>
       </div>
 
       <div class="intro__copy intro__copy--c" data-from="0.64" data-to="0.84">
-        <p class="display">Sem freio.</p>
+        <p class="display">Pé no<br>fundo.</p>
       </div>
 
       <div class="intro__hint" id="introHint">
-        <span>Role para descer</span>
+        <span>Desce</span>
         <i aria-hidden="true"></i>
       </div>
 
@@ -87,14 +101,22 @@
   </section>
 
   <main id="conteudo">
+    <!-- Faixa -->
+    <div class="tape" aria-hidden="true">
+      <div class="tape__track">
+        <span>Titanium Import’s</span><b>✶</b><span>Do baile pra rua</span><b>✶</b><span>Importado dos EUA</span><b>✶</b><span>Envio pra todo o Brasil</span><b>✶</b>
+        <span>Titanium Import’s</span><b>✶</b><span>Do baile pra rua</span><b>✶</b><span>Importado dos EUA</span><b>✶</b><span>Envio pra todo o Brasil</span><b>✶</b>
+      </div>
+    </div>
+
     <!-- Abertura do site -->
     <section class="lead container" id="sobre">
-      <p class="kicker kicker--dark">Titanium Import’s</p>
+      <p class="kicker kicker--muted">Titanium Import’s</p>
       <div class="lead__grid">
-        <h2 class="h-xl">Moda masculina importada, escolhida peça por peça.</h2>
+        <h2 class="h-xl">Roupa importada com a cara da rua.</h2>
         <div class="lead__text">
-          <p>Trazemos dos Estados Unidos o que realmente vale a pena vestir: tecidos encorpados, modelagem certa e acabamento que dura. Sem excesso, sem modismo.</p>
-          <p>Compre pelo site, finalize com a nossa equipe no WhatsApp e receba em qualquer lugar do Brasil.</p>
+          <p>A gente garimpa nos Estados Unidos o que tem qualidade de verdade e traz pro Brasil com preço justo. Peça encorpada, caimento certo e visual que chama atenção no baile e no dia a dia.</p>
+          <p>Escolhe aqui, fecha com a gente no WhatsApp e recebe em qualquer lugar do país.</p>
           <a href="#novidades" class="link-arrow">Ver novidades</a>
         </div>
       </div>
@@ -119,17 +141,22 @@
       <div class="grid" id="grid"></div>
     </section>
 
+    <!-- Palavra grande -->
+    <div class="shout" aria-hidden="true">
+      <span>No grau</span><span>No grau</span><span>No grau</span>
+    </div>
+
     <!-- Editorial -->
-    <section class="edit" id="inverno" aria-label="Inverno 26">
+    <section class="edit" id="rua" aria-label="Rua 26">
       <div class="edit__media">
-        <img src="assets/img/editorial-wide.webp" alt="Snowboarder de preto fazendo uma curva na neve" loading="lazy" width="1280" height="720">
+        <img src="assets/img/editorial-wide.webp" alt="Carro cinza fosco fazendo drift numa rua com grafite à noite" loading="lazy" width="1280" height="720">
       </div>
       <div class="edit__panel container">
         <div class="edit__card">
-          <p class="kicker kicker--dark">Inverno 26</p>
-          <h2 class="h-lg">Camadas que esquentam sem pesar.</h2>
-          <p>A coleção de inverno combina jaquetas puffer, moletons de algodão pesado e básicos de alta gramatura. Peças pensadas para a montanha e que funcionam na cidade.</p>
-          <a href="#novidades" class="btn">Comprar a coleção</a>
+          <p class="kicker kicker--accent">Rua 26</p>
+          <h2 class="h-lg">Feito pro rolê, do baile até a quebrada.</h2>
+          <p>Moletons pesados, jaquetas, bonés e tênis pra quem não passa despercebido. Peças que aguentam a noite inteira e continuam no estilo no dia seguinte.</p>
+          <a href="#novidades" class="btn btn--accent">Comprar agora</a>
         </div>
       </div>
     </section>
@@ -138,22 +165,22 @@
     <section class="service container" aria-label="Como funciona">
       <div class="service__item">
         <span class="service__n">01</span>
-        <h3>Envio para todo o Brasil</h3>
-        <p>Postamos com código de rastreio assim que o pagamento é confirmado.</p>
+        <h3>Entrega pra todo o Brasil</h3>
+        <p>Postamos com código de rastreio assim que o pagamento cai.</p>
       </div>
       <div class="service__item">
         <span class="service__n">02</span>
         <h3>Pix ou cartão</h3>
-        <p>Pague à vista no Pix ou parcele no cartão de crédito.</p>
+        <p>Paga à vista no Pix ou parcela no cartão de crédito.</p>
       </div>
       <div class="service__item">
         <span class="service__n">03</span>
-        <h3>Atendimento direto</h3>
-        <p>Dúvida de tamanho ou modelo? Fale com a gente pelo WhatsApp.</p>
+        <h3>Atendimento no zap</h3>
+        <p>Dúvida de tamanho ou modelo? Chama a gente no WhatsApp.</p>
       </div>
       <div class="service__item">
         <span class="service__n">04</span>
-        <h3>Peças selecionadas</h3>
+        <h3>Só peça selecionada</h3>
         <p>Cada item passa pela nossa curadoria antes de entrar no estoque.</p>
       </div>
     </section>
@@ -161,14 +188,14 @@
     <!-- Split -->
     <section class="split container" aria-label="Sobre a marca">
       <figure class="split__img">
-        <img src="assets/img/editorial-tall.webp" alt="Snowboarder vestindo jaqueta preta e óculos espelhados" loading="lazy" width="576" height="720">
+        <img src="assets/img/editorial-tall.webp" alt="Traseira de um carro cinza fosco soltando fumaça dos pneus à noite" loading="lazy" width="576" height="720">
       </figure>
       <div class="split__text">
-        <p class="kicker kicker--dark">Sobre nós</p>
-        <h2 class="h-lg">Dos Estados Unidos direto para o seu guarda-roupa.</h2>
-        <p>A Titanium Import’s nasceu da vontade de vestir bem sem pagar caro por isso. Selecionamos peças nos Estados Unidos com foco em qualidade e caimento, e cuidamos de tudo até a entrega.</p>
+        <p class="kicker kicker--muted">Sobre nós</p>
+        <h2 class="h-lg">Importado, mas é nosso.</h2>
+        <p>A Titanium Import’s nasceu na rua, da vontade de vestir bem sem pagar caro por isso. Selecionamos peças nos Estados Unidos com foco em qualidade e caimento, e cuidamos de tudo até chegar na sua mão.</p>
         <div class="split__cta">
-          <a href="#" class="btn js-wa" data-msg="Olá! Quero saber mais sobre as peças da Titanium Import's.">Falar no WhatsApp</a>
+          <a href="#" class="btn btn--accent js-wa" data-msg="Salve! Quero saber mais sobre as peças da Titanium Import's.">Chamar no WhatsApp</a>
           <a href="#" class="link-arrow js-social" data-network="instagram">Instagram</a>
           <a href="#" class="link-arrow js-social" data-network="tiktok">TikTok</a>
         </div>
@@ -181,24 +208,25 @@
     <div class="container ftr__top">
       <div class="ftr__brand">
         <img src="assets/img/logo-160.png" width="64" height="64" alt="Titanium Import's" loading="lazy">
-        <p>Moda masculina importada.<br>Enviamos para todo o Brasil.</p>
+        <p>Streetwear importado.<br>Enviamos pra todo o Brasil.</p>
       </div>
       <div class="ftr__col">
         <h4>Loja</h4>
         <a href="#novidades">Novidades</a>
         <a href="#categorias">Categorias</a>
-        <a href="#inverno">Inverno 26</a>
+        <a href="#rua">Rua 26</a>
       </div>
       <div class="ftr__col">
         <h4>Ajuda</h4>
-        <a href="#" class="js-wa" data-msg="Olá! Preciso de ajuda com um pedido.">WhatsApp</a>
-        <a href="#" class="js-wa" data-msg="Olá! Tenho uma dúvida sobre tamanhos.">Guia de tamanhos</a>
+        <a href="#" class="js-wa" data-msg="Salve! Preciso de ajuda com um pedido.">WhatsApp</a>
+        <a href="#" class="js-wa" data-msg="Salve! Tenho uma dúvida sobre tamanhos.">Guia de tamanhos</a>
         <span id="hours"></span>
       </div>
       <div class="ftr__col">
         <h4>Redes</h4>
         <a href="#" class="js-social" data-network="instagram">Instagram</a>
         <a href="#" class="js-social" data-network="tiktok">TikTok</a>
+        <a href="#" id="spotifyLink" target="_blank" rel="noopener">Playlist no Spotify</a>
       </div>
     </div>
     <div class="container ftr__bottom">
@@ -206,6 +234,26 @@
       <span>Pix · Cartão de crédito · Débito</span>
     </div>
   </footer>
+
+  <!-- ===================== Player (Spotify) ===================== -->
+  <aside class="dock is-min" id="dock" aria-label="Música" hidden>
+    <div class="dock__embed" id="dockEmbed">
+      <div id="spotifyEmbed"></div>
+    </div>
+    <div class="dock__bar">
+      <button class="dock__play" id="dockPlay" aria-label="Tocar música">
+        <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>
+        <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg>
+      </button>
+      <div class="dock__info">
+        <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="dock__label" id="dockLabel">Trilha Titanium</span>
+      </div>
+      <button class="dock__toggle" id="dockToggle" aria-expanded="false" aria-controls="dockEmbed" aria-label="Mostrar player">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+  </aside>
 
   <!-- ===================== Sacola ===================== -->
   <div class="scrim" id="scrim" hidden></div>
@@ -218,13 +266,14 @@
     <footer class="bag__foot">
       <div class="bag__row"><span>Subtotal</span><strong id="bagTotal">R$ 0,00</strong></div>
       <p class="bag__note" id="bagNote">Frete calculado no atendimento.</p>
-      <button class="btn btn--block" id="checkout">Finalizar pelo WhatsApp</button>
+      <button class="btn btn--accent btn--block" id="checkout">Fechar pedido no WhatsApp</button>
     </footer>
   </aside>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/js/intro.js"></script>
+  <script src="assets/js/music.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
