@@ -4,9 +4,9 @@
 (function () {
   'use strict';
 
-  var VERSION = 'v3';      // pasta dos quadros: troque ao trocar o vídeo
-  var FRAMES = 145;        // quadros exportados do vídeo
-  var FPS = 24;            // taxa original do vídeo
+  var VERSION = 'v4';      // pasta dos quadros: troque ao trocar o vídeo
+  var FRAMES = 231;        // quadros exportados do vídeo
+  var FPS = 20;            // taxa dos quadros exportados
   var VIDEO_END = 0.9;     // fração do scroll em que o vídeo termina
   var VEIL_FROM = 0.84;    // início do fade para o site
   var VEIL_TO = 0.95;
@@ -15,6 +15,9 @@
   var canvas = document.getElementById('introCanvas');
   if (!section || !canvas) return;
   var ctx = canvas.getContext('2d');
+  // fundo desfocado usado quando o vídeo vertical aparece em tela larga
+  var bg = document.getElementById('introBg');
+  var bgCtx = bg ? bg.getContext('2d') : null;
 
   var veil = document.getElementById('introVeil');
   var hint = document.getElementById('introHint');
@@ -23,8 +26,6 @@
   var loadLabel = document.getElementById('introLoad');
   var copies = Array.prototype.slice.call(section.querySelectorAll('.intro__copy'));
 
-  var portrait = window.matchMedia('(max-aspect-ratio: 1/1)');
-  var set = portrait.matches ? 'mobile' : 'desktop';
   var images = [];
   var loaded = 0;
   var generation = 0;
@@ -36,7 +37,7 @@
   var ticking = false;
 
   function src(i) {
-    return 'assets/frames/' + VERSION + '/' + set + '/f' + String(i + 1).padStart(3, '0') + '.webp';
+    return 'assets/frames/' + VERSION + '/f' + String(i + 1).padStart(3, '0') + '.webp';
   }
 
   /* Ordem de carregamento progressiva: primeiro quadros espaçados,
@@ -105,6 +106,10 @@
     var h = canvas.clientHeight;
     canvas.width = Math.round(w * dpr);
     canvas.height = Math.round(h * dpr);
+    if (bg) {
+      bg.width = Math.max(1, Math.round(w / 6));
+      bg.height = Math.max(1, Math.round(h / 6));
+    }
     drawn = -1;
     render(true);
   }
@@ -114,10 +119,29 @@
     if (!img) return;
     var cw = canvas.width;
     var ch = canvas.height;
-    var s = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
-    var w = img.naturalWidth * s;
-    var h = img.naturalHeight * s;
-    ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
+    var iw = img.naturalWidth;
+    var ih = img.naturalHeight;
+    var panel = bgCtx && (cw / ch) > (iw / ih) * 1.25;
+    section.classList.toggle('is-panel', !!panel);
+
+    if (!panel) {
+      // tela em pé: o vídeo ocupa tudo
+      var s = Math.max(cw / iw, ch / ih);
+      ctx.drawImage(img, (cw - iw * s) / 2, (ch - ih * s) / 2, iw * s, ih * s);
+      return;
+    }
+
+    // tela larga: fundo desfocado + vídeo inteiro à direita
+    var bw = bg.width;
+    var bh = bg.height;
+    var bs = Math.max(bw / iw, bh / ih);
+    bgCtx.drawImage(img, (bw - iw * bs) / 2, (bh - ih * bs) / 2, iw * bs, ih * bs);
+
+    var ps = ch / ih;
+    var pw = iw * ps;
+    var px = Math.min(cw - pw - cw * 0.04, cw * 0.7 - pw / 2);
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.drawImage(img, px, 0, pw, ch);
   }
 
   function render(force) {
@@ -148,7 +172,8 @@
     if (bar) bar.style.width = (clamp(p / VIDEO_END, 0, 1) * 100).toFixed(2) + '%';
     if (time) {
       var sec = Math.floor((clamp(p / VIDEO_END, 0, 1) * (FRAMES - 1)) / FPS);
-      time.textContent = '00:0' + sec + ' / 00:0' + Math.round(FRAMES / FPS);
+      var pad = function (n) { return (n < 10 ? '00:0' : '00:') + n; };
+      time.textContent = pad(sec) + ' / ' + pad(Math.round(FRAMES / FPS));
     }
     var v = smooth(VEIL_FROM, VEIL_TO, p);
     if (veil) veil.style.opacity = v.toFixed(3);
@@ -186,11 +211,6 @@
   }
 
   function onOrientation() {
-    var next = portrait.matches ? 'mobile' : 'desktop';
-    if (next !== set) {
-      set = next;
-      loadFrames();
-    }
     resize();
   }
 

@@ -10,9 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/frames/v3/desktop/f001.webp" media="(min-aspect-ratio: 1/1)">
-  <link rel="preload" as="image" href="assets/frames/v3/mobile/f001.webp" media="(max-aspect-ratio: 1/1)">
-  <link rel="stylesheet" href="assets/css/style.css?v=3">
+  <link rel="preload" as="image" href="assets/frames/v4/f001.webp">
+  <link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 <body class="is-intro">
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -66,8 +65,9 @@
   </header>
 
   <!-- ===================== Intro com scroll ===================== -->
-  <section class="intro" id="topo" aria-label="Abertura — Coleção Rua 26">
+  <section class="intro" id="topo" aria-label="Abertura — tour pela loja Titanium Import's">
     <div class="intro__stage">
+      <canvas class="intro__bg" id="introBg" aria-hidden="true"></canvas>
       <canvas class="intro__canvas" id="introCanvas" aria-hidden="true"></canvas>
       <div class="intro__shade" aria-hidden="true"></div>
 
@@ -82,7 +82,7 @@
       </div>
 
       <div class="intro__copy intro__copy--c" data-from="0.64" data-to="0.84">
-        <p class="display">Bonde<br><span class="hl">Titanium.</span></p>
+        <p class="display">Cola na<br><span class="hl">loja.</span></p>
       </div>
 
       <div class="intro__hint" id="introHint">
@@ -188,7 +188,7 @@
     <!-- Split -->
     <section class="split container" aria-label="Sobre a marca">
       <figure class="split__img">
-        <img src="assets/img/rua-tall-v3.webp" alt="Rapaz sentado no capô de um carro soltando fumaça de narguilé" loading="lazy" width="576" height="720">
+        <img src="assets/img/loja-v4.webp" alt="Parede de tênis e araras dentro da loja Titanium Import's" loading="lazy" width="576" height="720">
       </figure>
       <div class="split__text">
         <p class="kicker kicker--muted">Sobre nós</p>
@@ -272,8 +272,8 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="assets/js/intro.js?v=3"></script>
-  <script src="assets/js/music.js?v=3"></script>
-  <script src="assets/js/main.js?v=3"></script>
+  <script src="assets/js/intro.js?v=4"></script>
+  <script src="assets/js/music.js?v=4"></script>
+  <script src="assets/js/main.js?v=4"></script>
 </body>
 </html>

@@ -258,6 +258,21 @@ h1, h2, h3, h4, p { margin: 0; }
   background: #0a0a0c;
 }
 .intro__canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.intro__bg {
+  position: absolute;
+  inset: -60px;
+  width: calc(100% + 120px);
+  height: calc(100% + 120px);
+  filter: blur(36px) brightness(0.38) saturate(1.3);
+  display: none;
+}
+.intro.is-panel .intro__bg { display: block; }
+/* vídeo vertical em tela larga: textos ficam à esquerda do vídeo */
+.intro.is-panel .intro__copy { right: auto; max-width: min(46vw, 760px); }
+.intro.is-panel .intro__copy--c { left: var(--gutter); text-align: left; }
+.intro.is-panel .display { font-size: clamp(3.4rem, 8.4vw, 9rem); }
+.intro.is-panel .display--sm { font-size: clamp(2.2rem, 4.2vw, 4.4rem); }
+.intro.is-panel .intro__hint { display: none; }
 .intro__shade {
   position: absolute; inset: 0; pointer-events: none;
   background:
